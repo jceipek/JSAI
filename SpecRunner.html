@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.1/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.1/jasmine.css">
+
+  <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine-html.js"></script>
+
+  <script type="text/javascript" src="lib/require.js"></script>
+
+  <script type="text/javascript">
+    require(
+        [
+            "lib/domready!", // Need to make sure the page has loaded
+                            // so that Jasmine can add to the DOM
+            // Add more specs here...
+            "spec/utilsSpec"
+        ],
+        function(){
+          var jasmineEnv = jasmine.getEnv();
+          var htmlReporter = new jasmine.HtmlReporter();
+
+          // The reporter will aggregate the Jasmine spec results
+          jasmineEnv.addReporter(htmlReporter);
+
+          // Run all the test specs.
+          jasmineEnv.execute();
+        }
+    );
+  </script>
+</head>
+
+<body>
+</body>
+</html>
